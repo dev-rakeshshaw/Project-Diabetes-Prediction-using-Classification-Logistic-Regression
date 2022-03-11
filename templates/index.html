@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Diabetes Prediction</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" step=any name="Pregnancies" id="Pregnancies" placeholder="Number of times pregnant">
+            <input type="number" step=any name="Glucose" id="Glucose" placeholder="Glucose (mg/dL)">
+            <input type="number" step=any name="BloodPressure" id="BloodPressure	" placeholder="BloodPressure (mm Hg)">
+            <input type="number" step=any name="SkinThickness" id="SkinThickness" placeholder="SkinThickness (mm)">
+            <input type="number" step=any name="Insulin" id="Insulin" placeholder="Insulin (m IU/ml)">
+            <input type="number" step=any name="BMI" id="BMI"placeholder="BMI">
+            <input type="number" step=any name="DiabetesPedigreeFunction" id="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunc">
+            <input type="number" step=any name="Age" id="Age" placeholder="Age (years)">
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
